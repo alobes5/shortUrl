@@ -1,7 +1,12 @@
 package shortened.model;
 
+import lombok.Builder;
+import lombok.Data;
+import org.springframework.validation.annotation.Validated;
 
-public class Response {
+@Data
+@Builder
+public class UrlModel {
 
     public String shortUrl;
     public String longUrl;
