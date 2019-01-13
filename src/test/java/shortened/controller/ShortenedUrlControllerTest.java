@@ -61,7 +61,7 @@ public class ShortenedUrlControllerTest {
     public void forwardingAnShortUrlToOriginal() throws Exception {
         String key = "12345";
         String longUrl = "http://google.com";
-        Mockito.when(service.getUrl(Mockito.anyString())).thenReturn(longUrl);
+        Mockito.when(service.getLongUrl(Mockito.anyString())).thenReturn(longUrl);
 
         mockMvc.perform(get(url + "/" + key)
                 .contentType(CONTENT_TYPE_JSON))

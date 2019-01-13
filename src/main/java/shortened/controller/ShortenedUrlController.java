@@ -28,7 +28,7 @@ public class ShortenedUrlController {
     @GetMapping("/shortUrl/{id}")
     @ResponseBody
     public void forwardingAnShortUrlToOriginal(@PathVariable String id, HttpServletResponse resp) throws IOException {
-        String originalUrl = service.getUrl(id);
+        String originalUrl = service.getLongUrl(id);
         resp.sendRedirect(originalUrl);
     }
 }

@@ -11,6 +11,8 @@ import org.mockito.junit.MockitoJUnitRunner;
 import shortened.UrlModelMatcher;
 import shortened.model.UrlEncode;
 import shortened.model.UrlModel;
+import shortened.repository.ShortUrlRepository;
+import shortened.repository.entity.UrlEntity;
 import shortened.service.handler.Encode;
 import shortened.service.validator.ValidateUrl;
 
@@ -25,12 +27,17 @@ public class ShortUrlServiceTest {
     private ValidateUrl validate;
 
     @Mock
-    Encode encode;
+    private Encode encode;
+
+    @Mock
+    private ShortUrlRepository repository;
+
+    @Mock
+    private UrlConverter converter;
 
     @Before
     public void setUp() throws Exception {
-
-        service = new ShortUrlService(validate, encode);
+        service = new ShortUrlService(validate, repository, encode, converter);
     }
 
     @Test
@@ -38,11 +45,14 @@ public class ShortUrlServiceTest {
         String longUrl = "http://google.com";
         String shortUrl = "http://localhost:8080/12345";
         UrlModel expected = UrlModel.builder().longUrl(longUrl).shortUrl(shortUrl).build();
-
-        UrlEncode urlEncode = UrlEncode.builder().key("12345").url(shortUrl).build();
+        String key = "12345";
+        UrlEncode urlEncode = UrlEncode.builder().key(key).url(shortUrl).build();
         Mockito.when(validate.isAValidUrl(Mockito.anyString())).thenReturn(true);
         Mockito.when(encode.encodeUrl()).thenReturn(urlEncode);
-
+        UrlEntity entity = buildUrlEntity(longUrl, shortUrl, key);
+        Mockito.when(converter.toEntity(Mockito.any(UrlEncode.class), Mockito.anyString()))
+                .thenReturn(entity);
+        Mockito.when(repository.save(Mockito.any(UrlEntity.class))).thenReturn(entity);
         UrlModel urlModel = service.createShortUrl(longUrl);
 
         Assert.assertThat(expected, UrlModelMatcher.matcher(urlModel));
@@ -63,13 +73,11 @@ public class ShortUrlServiceTest {
         String longUrl = "http://google.com";
         String key = "12345";
         String shortUrl = "http://localhost:8080/12345";
+        UrlEntity entity = buildUrlEntity(longUrl, shortUrl, key);
 
-        UrlEncode urlEncode = UrlEncode.builder().key(key).url(shortUrl).build();
-        Mockito.when(validate.isAValidUrl(Mockito.anyString())).thenReturn(true);
-        Mockito.when(encode.encodeUrl()).thenReturn(urlEncode);
+        Mockito.when(repository.findByKey(Mockito.anyString())).thenReturn(entity);
 
-        service.createShortUrl(longUrl);
-        String url = service.getUrl(key);
+        String url = service.getLongUrl(key);
 
         Assert.assertThat(longUrl, is(url));
     }
@@ -79,8 +87,16 @@ public class ShortUrlServiceTest {
     public void getUrl_invalidKey() {
         String key = "12345";
 
-        String url = service.getUrl(key);
+        String url = service.getLongUrl(key);
 
         Assert.assertThat(Strings.EMPTY, is(url));
+    }
+
+    private UrlEntity buildUrlEntity(String longUrl, String shortUrl, String key) {
+        UrlEntity entity = new UrlEntity();
+        entity.setKey(key);
+        entity.setLongUrl(longUrl);
+        entity.setShortUrl(shortUrl);
+        return entity;
     }
 }

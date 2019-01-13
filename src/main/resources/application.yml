@@ -4,6 +4,9 @@ server:
 spring:
   application:
     name: App
+  h2:
+    console:
+      enabled: true
 
 ribbon:
   ServerListRefreshInterval: 1000

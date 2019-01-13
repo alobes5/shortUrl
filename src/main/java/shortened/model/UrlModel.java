@@ -1,5 +1,6 @@
 package shortened.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Data;
 
@@ -7,6 +8,9 @@ import lombok.Data;
 @Builder
 public class UrlModel {
 
+    @JsonProperty
     public String shortUrl;
+
+    @JsonProperty
     public String longUrl;
 }
