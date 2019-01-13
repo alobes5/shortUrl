@@ -1,24 +1,34 @@
 package shortened.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import shortened.model.UrlModel;
+import shortened.service.ShortUrlService;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @Controller
 public class ShortenedUrlController {
 
-    @PostMapping("/shortUrl")
-    @ResponseBody
-    public UrlModel createAnShortUrl(){
-        return UrlModel.builder().longUrl("test long").shortUrl("test shrot").build();
+    private final ShortUrlService service;
+
+    @Autowired
+    public ShortenedUrlController(final ShortUrlService service) {
+        this.service = service;
     }
 
-    @GetMapping("/shortUrl")
+    @PostMapping("/shortUrl")
     @ResponseBody
-    public UrlModel forwardingAnShortUrlToOriginal(){
-        return UrlModel.builder().longUrl("test long f").shortUrl("test shrot f").build();
+    public UrlModel createAnShortUrl(@RequestBody final UrlModel model) {
+        return service.createShortUrl(model.getLongUrl());
+    }
+
+    @GetMapping("/shortUrl/{id}")
+    @ResponseBody
+    public void forwardingAnShortUrlToOriginal(@PathVariable String id, HttpServletResponse resp) throws IOException {
+        String originalUrl = service.getUrl(id);
+        resp.sendRedirect(originalUrl);
     }
 }
