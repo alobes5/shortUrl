@@ -60,9 +60,11 @@ public class ShortenedUrlControllerTest {
     @Test
     public void forwardingAnShortUrlToOriginal() throws Exception {
         String key = "12345";
-        mockMvc.perform(get(url)
-                .param("id", key)
+        String longUrl = "http://google.com";
+        Mockito.when(service.getUrl(Mockito.anyString())).thenReturn(longUrl);
+
+        mockMvc.perform(get(url + "/" + key)
                 .contentType(CONTENT_TYPE_JSON))
-                .andExpect(status().isOk());
+                .andExpect(status().isFound());
     }
 }

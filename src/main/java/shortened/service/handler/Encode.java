@@ -1,9 +1,11 @@
 package shortened.service.handler;
 
+import org.springframework.stereotype.Component;
 import shortened.model.UrlEncode;
 
 import java.time.Instant;
 
+@Component
 public class Encode {
 
     public UrlEncode encodeUrl() {
