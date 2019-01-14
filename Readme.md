@@ -114,4 +114,6 @@ To check some metrics you may access the `http://<ip>:<port>/actuator/metrics/ht
 * No relational database
 * Custom metrics
 * Swagger
+* Validations
+* Path
 
