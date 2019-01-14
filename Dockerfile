@@ -1,5 +1,5 @@
 FROM openjdk:8-jdk-alpine
-COPY ./target/gs-spring-boot-docker-0.1.0.jar /usr/src/gs-spring-boot-docker/
-WORKDIR /usr/src/gs-spring-boot-docker
+COPY ./target/ab-short-url-0.1.0.jar /usr/src/ab-short-url/
+WORKDIR /usr/src/ab-short-url
 EXPOSE 8080
-CMD ["java", "-jar", "gs-spring-boot-docker-0.1.0.jar"]
+CMD ["java", "-jar", "ab-short-url-0.1.0.jar"]

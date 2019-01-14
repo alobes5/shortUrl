@@ -3,12 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.springframework</groupId>
-    <artifactId>gs-spring-boot-docker</artifactId>
+    <groupId>com.ab</groupId>
+    <artifactId>ab-short-url</artifactId>
     <version>0.1.0</version>
     <packaging>jar</packaging>
-    <name>Spring Boot Docker</name>
-    <description>Getting started with Spring Boot and Docker</description>
+    <name>Spring Boot Short URL</name>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -28,7 +27,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            <!-- tag::plugin[] -->
+
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
@@ -37,9 +36,7 @@
                     <repository>${docker.image.prefix}/${project.artifactId}</repository>
                 </configuration>
             </plugin>
-            <!-- end::plugin[] -->
 
-            <!-- tag::unpack[] -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -62,7 +59,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <!-- end::unpack[] -->
+
         </plugins>
     </build>
 
