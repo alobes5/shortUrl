@@ -1,11 +1,11 @@
 package com.ab.shortened.service;
 
+import com.ab.shortened.UrlEntityMatcher;
 import com.ab.shortened.model.UrlEncode;
+import com.ab.shortened.repository.entity.UrlEntity;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import com.ab.shortened.UrlEntityMatcher;
-import com.ab.shortened.repository.entity.UrlEntity;
 
 public class UrlConverterTest {
 

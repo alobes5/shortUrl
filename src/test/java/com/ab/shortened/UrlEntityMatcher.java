@@ -1,9 +1,9 @@
 package com.ab.shortened;
 
+import com.ab.shortened.repository.entity.UrlEntity;
 import org.hamcrest.Description;
 import org.hamcrest.Factory;
 import org.hamcrest.TypeSafeMatcher;
-import com.ab.shortened.repository.entity.UrlEntity;
 
 public class UrlEntityMatcher extends TypeSafeMatcher<UrlEntity> {
 

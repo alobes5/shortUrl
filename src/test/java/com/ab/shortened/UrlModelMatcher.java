@@ -1,9 +1,9 @@
 package com.ab.shortened;
 
+import com.ab.shortened.model.UrlModel;
 import org.hamcrest.Description;
 import org.hamcrest.Factory;
 import org.hamcrest.TypeSafeMatcher;
-import com.ab.shortened.model.UrlModel;
 
 public class UrlModelMatcher extends TypeSafeMatcher<UrlModel> {
 

@@ -1,14 +1,14 @@
 package com.ab.shortened.service;
 
-import com.ab.shortened.service.handler.Encode;
-import org.apache.logging.log4j.util.Strings;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import com.ab.shortened.model.UrlEncode;
 import com.ab.shortened.model.UrlModel;
 import com.ab.shortened.repository.ShortUrlRepository;
 import com.ab.shortened.repository.entity.UrlEntity;
+import com.ab.shortened.service.handler.Encode;
 import com.ab.shortened.service.validator.ValidateUrl;
+import org.apache.logging.log4j.util.Strings;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 public class ShortUrlService {

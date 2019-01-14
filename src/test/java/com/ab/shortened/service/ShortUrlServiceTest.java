@@ -1,5 +1,12 @@
 package com.ab.shortened.service;
 
+import com.ab.shortened.UrlModelMatcher;
+import com.ab.shortened.model.UrlEncode;
+import com.ab.shortened.model.UrlModel;
+import com.ab.shortened.repository.ShortUrlRepository;
+import com.ab.shortened.repository.entity.UrlEntity;
+import com.ab.shortened.service.handler.Encode;
+import com.ab.shortened.service.validator.ValidateUrl;
 import org.apache.logging.log4j.util.Strings;
 import org.junit.Assert;
 import org.junit.Before;
@@ -8,13 +15,6 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
-import com.ab.shortened.UrlModelMatcher;
-import com.ab.shortened.model.UrlEncode;
-import com.ab.shortened.model.UrlModel;
-import com.ab.shortened.repository.ShortUrlRepository;
-import com.ab.shortened.repository.entity.UrlEntity;
-import com.ab.shortened.service.handler.Encode;
-import com.ab.shortened.service.validator.ValidateUrl;
 
 import static org.hamcrest.CoreMatchers.is;
 

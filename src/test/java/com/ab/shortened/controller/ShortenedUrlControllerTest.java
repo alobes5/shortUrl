@@ -1,6 +1,7 @@
 package com.ab.shortened.controller;
 
 import com.ab.shortened.Application;
+import com.ab.shortened.model.UrlModel;
 import com.ab.shortened.service.ShortUrlService;
 import org.hamcrest.CoreMatchers;
 import org.junit.Before;
@@ -15,7 +16,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.context.WebApplicationContext;
-import com.ab.shortened.model.UrlModel;
 
 import static org.junit.Assert.assertNotNull;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;

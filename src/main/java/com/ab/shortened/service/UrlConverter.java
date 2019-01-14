@@ -1,8 +1,8 @@
 package com.ab.shortened.service;
 
 import com.ab.shortened.model.UrlEncode;
-import org.springframework.stereotype.Component;
 import com.ab.shortened.repository.entity.UrlEntity;
+import org.springframework.stereotype.Component;
 
 @Component
 public class UrlConverter {

@@ -1,8 +1,8 @@
 package com.ab.shortened.service.handler;
 
+import com.ab.shortened.model.UrlEncode;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-import com.ab.shortened.model.UrlEncode;
 
 import java.time.Instant;
 
