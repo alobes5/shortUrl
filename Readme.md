@@ -96,4 +96,4 @@ RESPONSE:
 }
 
 ```
-To check some metrics you may access the `http://<ip>:<port>/actuator/metrics/http.server.requests`.
+To check some metrics you may access the `http://<ip>:<port>/actuator/metrics/http.server.requests` or `http://<ip>:<port>/actuator/httptrace`
