@@ -1,15 +1,21 @@
 version: '3'
 
 services:
-  web:
-    build: .
+  gs-spring-boot-docker:
     ports:
     - "8080:8080"
-  postgres96:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+  postgres:
     restart: always
-    image: postgres:9.6
+    image: postgres:latest
     ports:
     - "5432:5432"
     environment:
-      POSTGRES_PASSWORD: admin@123
+      POSTGRES_PASSWORD: admin
       POSTGRES_USER: postgres
+
+networks:
+  spring-cloud-network:
+    driver: bridge

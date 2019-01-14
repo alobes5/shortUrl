@@ -1,8 +1,9 @@
+
 create table url_table (
-    ID identity not null primary key,
-    KEY_CODE varchar(10) not null unique,
-    SHORT_URL varchar(100) not null unique,
-    LONG_URL varchar(200) not null unique
+    ID SERIAL primary key,
+    KEY_CODE varchar(10) not null ,
+    SHORT_URL varchar(100) not null ,
+    LONG_URL varchar(200) not null
 );
 
 create index IDX_KEY on URL_TABLE(KEY_CODE);
