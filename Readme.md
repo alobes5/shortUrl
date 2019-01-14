@@ -2,14 +2,22 @@
 
 ## Mandatory Requirements
 
-- Design and implement an API for short URL creation :white_check_mark:
-- Implement forwarding of short URLs to the original ones :white_check_mark:
-- There should be some form of persistent storage :white_check_mark:
-- The application should be distributed as one or more Docker images :white_check_mark:
+* Design and implement an API for short URL creation :white_check_mark:
+  * POST endpoint
+
+* Implement forwarding of short URLs to the original ones :white_check_mark:
+  * GET endpoint
+
+* There should be some form of persistent storage :white_check_mark:
+  * Repository and Postgres
+
+* The application should be distributed as one or more Docker images :white_check_mark:
+  * Two images, api and database
 
 ## Additional Requirements
 
-- Design and implement an API for gathering different statistics :white_check_mark:
+* Design and implement an API for gathering different statistics :white_check_mark:
+** Acuator statistics and metrics
 
 ## How to run
 
