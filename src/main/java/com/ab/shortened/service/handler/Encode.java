@@ -17,8 +17,15 @@ public class Encode {
 
     public UrlEncode encodeUrl() {
         String key = Integer.toHexString(Instant.now().getNano());
-        String url = "http://" + ip + ":" + port + "/shortUrl/" + key;
+        StringBuilder url = new StringBuilder();
 
-        return UrlEncode.builder().key(key).url(url).build();
+        url.append("http://")
+                .append(ip)
+                .append(":")
+                .append(port)
+                .append("/shortUrl/")
+                .append(key);
+
+        return UrlEncode.builder().key(key).url(url.toString()).build();
     }
 }
