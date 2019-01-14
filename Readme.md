@@ -19,7 +19,7 @@
 * Design and implement an API for gathering different statistics :white_check_mark:
   * Acuator statistics and metrics
 
-## How to run
+## How to run :computer:
 
 In order to run the application `ab-short-url` execute the commands:
 * Checkout the code
@@ -27,7 +27,7 @@ In order to run the application `ab-short-url` execute the commands:
 * See the additional-requirements
 * Run `docker-compose up`
 
-### Aditional configuration:
+### Aditional configuration: :heavy_plus_sign:
 
 On the YML file config, we have two parameters that need to be updated:
 * server.port
@@ -39,13 +39,13 @@ $ docker-machine IP
 192.168.99.100
 ```
 
-### Expected App behavior
+### Expected App behavior :+1:
 * When `docker-compose up` is executed, should be created 2 containers, the Postgres and the app container.
 * The Postgres should have his  database objects configures by Flyway
 * The acuator should have all the endpoints expose.
 * No authentication is required
 
-### Endpoints
+### Endpoints :clipboard:
 The endpoints will be described with a flow example.
 
 * Create short URL
@@ -103,5 +103,15 @@ RESPONSE:
 ...
 }
 
+
 ```
 To check some metrics you may access the `http://<ip>:<port>/actuator/metrics/http.server.requests` or `http://<ip>:<port>/actuator/httptrace`
+
+
+## Could be improved :interrobang:
+* Logs
+* Thread safe
+* No relational database
+* Custom metrics
+* Swagger
+
