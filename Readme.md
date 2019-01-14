@@ -23,7 +23,7 @@ In order to run the application `ab-short-url` execute the commands:
 
 On the YML file config, we have two parameters that need to be updated:
 * server.port
-* IP
+* ip
 
 The IP must be filled with the docker configured IP, to get this value you may execute the command:
 ```
@@ -32,9 +32,9 @@ $ docker-machine IP
 ```
 
 ### Expected App behavior
-* When `docker-compose up` is executed, should be created 2 containers, the postgres and the app container.
-* The postgres should had his  database objects configures by flayway
-* The acuator should have all the endoiunts expose.
+* When `docker-compose up` is executed, should be created 2 containers, the Postgres and the app container.
+* The Postgres should have his  database objects configures by Flyway
+* The acuator should have all the endpoints expose.
 * No authentication is required
 
 ### Endpoints
@@ -72,7 +72,7 @@ BODY: No body
 RESPONSE: Open the Google page
 
 * Acuator
-Try the acuator enpoint in order the check the api informations. 
+Try the acuator endpoint in order the check the API information. 
 
 GET:
 
