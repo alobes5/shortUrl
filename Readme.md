@@ -2,14 +2,14 @@
 
 ## Mandatory Requirements
 
-- Design and implement an API for short URL creation 
-- Implement forwarding of short URLs to the original ones
-- There should be some form of persistent storage
-- The application should be distributed as one or more Docker images
+- Design and implement an API for short URL creation :white_check_mark:
+- Implement forwarding of short URLs to the original ones :white_check_mark:
+- There should be some form of persistent storage :white_check_mark:
+- The application should be distributed as one or more Docker images :white_check_mark:
 
 ## Additional Requirements
 
-- Design and implement an API for gathering different statistics
+- Design and implement an API for gathering different statistics :white_check_mark:
 
 ## How to run
 
