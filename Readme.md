@@ -17,7 +17,7 @@
 ## Additional Requirements
 
 * Design and implement an API for gathering different statistics :white_check_mark:
-** Acuator statistics and metrics
+  * Acuator statistics and metrics
 
 ## How to run
 
