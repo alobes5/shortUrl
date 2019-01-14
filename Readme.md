@@ -12,7 +12,7 @@
   * Repository and Postgres
 
 * The application should be distributed as one or more Docker images :white_check_mark:
-  * Two images, api and database
+  * 3 images, api, database and openjdk
 
 ## Additional Requirements
 
