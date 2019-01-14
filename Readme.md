@@ -16,7 +16,7 @@
 In order to run the application `ab-short-url` execute the commands:
 * Checkout the code
 * Run `./mvnw clean install` or `./mvnw clean package`
-* See the Aditional configurations
+* See the additional-requirements
 * Run `docker-compose up`
 
 ### Aditional configuration:
